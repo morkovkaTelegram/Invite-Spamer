@@ -31,7 +31,7 @@ user_id = 'YOUR_ID'
 async def create_invites():
     # создаем заданное количество приглашений и отправляем их пользователю в личные сообщения
     for i in range(num_invites):
-        invite_link = await bot.create_chat_invite_link(chat_id=chat_id, member_limit=1) #member limit - Максимальное количество пользователей которые помогут присоединиться 1-99999
+        invite_link = await bot.create_chat_invite_link(chat_id=chat_id, member_limit=1) #member limit - Максимальное количество пользователей которые могут присоединиться 1-99999
         invite_string = f"{invite_link.invite_link}"
         await bot.send_message(chat_id=user_id, text=invite_string, disable_web_page_preview=True)
         await asyncio.sleep(delay)
